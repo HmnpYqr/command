@@ -30,7 +30,7 @@ sudo apt full-upgrade
 sudo apt autoremove
 ```
 
-## pip相关命令
+## pip 相关命令
 
 ```bash
 # 查看 pip 版本
@@ -67,7 +67,7 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
 
-## git相关命令
+## git 相关命令
 
 ```bash
 # 初始化 git 仓库
