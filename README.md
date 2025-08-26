@@ -524,29 +524,41 @@ docker volume rm <卷名>
 docker volume inspect <卷名>
 ```
 
-## screen相关命令
+## screen 命令
 
 ```bash
-# 新建一个名为 mysession 的会话
-screen -S mysession
+# 创建名为 name 的会话
+screen -S name
+
+# 创建一个会话，系统自动命名
+screen
 ```
 
 ```bash
-# 列出所有会话
-screen -ls
-```
-
-```bash
-# 重新连接到名为 mysession 的会话
-screen -r mysession
-```
-
-```bash
-# 退出当前会话（不关闭会话，按下快捷键）
+# 退出当前 screen 会话（程序仍在后台执行）
+# 按 Ctrl+a 后再按 d
 Ctrl+a d
 ```
 
 ```bash
-# 关闭会话（在会话内输入）
-exit
+# 查看当前已有的 screen 会话
+screen -ls
 ```
+
+```bash
+# 进入某个会话
+screen -r <会话ID或名称>
+```
+
+### 窗口操作快捷键
+
+- `Ctrl+a w`：展示当前会话中的所有窗口
+- `Ctrl+a c`：创建新窗口
+- `Ctrl+a n`：切换至下一个窗口
+- `Ctrl+a p`：切换至上一个窗口
+- `Ctrl+a <数字>`：切换至编号为数字的窗口
+- `Ctrl+a k`：杀死当前窗口
+
+```bash
+# 删除某个会话
+screen -S <your_screen_name> -X
